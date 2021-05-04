@@ -1,0 +1,21 @@
+name: first
+
+on: push
+
+jobs:
+        job1:
+                -name: firstjob
+                runs-on: ubuntu-latest
+                steps:
+                        -name: stepone
+                        uses: action/checkout@v2
+                        -name: steptwo
+                        run: env/sort
+        job1:
+                -name: secondjob
+                runs-on: windows-latest
+                steps:
+                        -name: stepone
+                        uses: action/checkout@v2
+                        -name: steptwo
+                        run: "get-chaildItem Env:|sort-object name"
